@@ -1,0 +1,44 @@
+#logo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    filter: blur(5px);
+}
+
+#content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#menu a {
+    margin: 5px 15px;
+    text-decoration: none;
+    color: green;
+    transition: color 0.5s;
+    transition: background 0.5s;
+    padding: 5px 15px;
+    font-size: 25px;
+    border-radius: 15px;
+}
+
+#menu a:hover {
+    color: white;
+    background: yellowgreen;
+}
+
+.centered {
+    font-family: "Bookman Old Style";
+    font-size: 22px;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
