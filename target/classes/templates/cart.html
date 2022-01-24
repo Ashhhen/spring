@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Construction Tools</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div id="content">
+    <div class="order-position">
+        <div class="title">Tytuł</div>
+        <div class="manufacturer">Producent</div>
+        <div class="quantity">Ilość</div>
+        <div class="piece-price">Cena j.</div>
+        <div class="price">Cena</div>
+    </div>
+    <div th:each="position : ${cart.orderPositions}" class="order-position">
+        <div th:text="${position.tool.title}" class="title"></div>
+        <div th:text="${position.tool.manufacturer}" class="manufacturer"></div>
+        <div th:text="${position.quantity}" class="quantity"></div>
+        <div th:text="${position.tool.price + 'zł'}" class="piece-price"></div>
+        <div th:text="${position.tool.price * position.quantity + 'zł'}" class="price"></div>
+    </div>
+    <div class="order-position">
+        <div class="title"></div>
+        <div class="manufacturer"></div>
+        <div class="quantity"></div>
+        <div class="piece-price">Suma</div>
+        <div th:text="${sum + 'zł'}" class="price"></div>
+    </div>
+    <a href="/order">Zamów</a>
+</div>
+</body>
+</html>
